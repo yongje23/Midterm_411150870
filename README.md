@@ -9,7 +9,7 @@
 - git init
 - git add .
 - git commit -m 'message'
-
+-
 # github and git
 - create new repository in github
 - git remote add origin yours.git
