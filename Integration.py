@@ -64,4 +64,29 @@ def overview_student():
 botton_overview = tk.Button(root, text='Overview', command=overview_student)
 botton_overview.pack(pady=25)
 
+
+# def a delete_student()
+def delete_student():
+    student_id = entry_id.get()
+
+    # fetch the row to be deleted for reporting
+    cursor.execute('SELECT * FROM DB_student WHERE db_student_id=?', (student_id,))
+    deleted = cursor.fetchall()
+
+    # delete the row
+    cursor.execute('DELETE FROM DB_student WHERE db_student_id=?', (student_id,))
+    conn.commit()
+
+    print('Following row is deleted:', deleted)
+
+# new button Delete
+button_delete = tk.Button(root, text='Delete', command=delete_student)
+button_delete.pack(pady=10)
+
+
+
+
+
+  
+
 root.mainloop() #must be put to the end of programming code
